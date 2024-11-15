@@ -7,7 +7,16 @@ add_library(aht20 INTERFACE)
 enable_language(C ASM)
 
 
-message("AHT20 driver dir: " ${CMAKE_CURRENT_SOURCE_DIR})
+message("AHT20 driver by
+
+███╗   ███╗██╗   ██╗███████╗███████╗██╗███╗   ██╗██╗  ██╗██╗███╗   ██╗ ██████╗ 
+████╗ ████║██║   ██║██╔════╝██╔════╝██║████╗  ██║██║ ██╔╝██║████╗  ██║██╔════╝ 
+██╔████╔██║██║   ██║█████╗  █████╗  ██║██╔██╗ ██║█████╔╝ ██║██╔██╗ ██║██║  ███╗
+██║╚██╔╝██║██║   ██║██╔══╝  ██╔══╝  ██║██║╚██╗██║██╔═██╗ ██║██║╚██╗██║██║   ██║
+██║ ╚═╝ ██║╚██████╔╝██║     ██║     ██║██║ ╚████║██║  ██╗██║██║ ╚████║╚██████╔╝
+╚═╝     ╚═╝ ╚═════╝ ╚═╝     ╚═╝     ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ 
+                                                                               
+")
 
 file(GLOB AHT20_SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}//Src/*.c)
 
@@ -22,15 +31,12 @@ target_sources(aht20 PUBLIC
 
 option(AHT20_DRIVER_HAL_STM32 "Use STM32 HAL" ON)
 
-if()
-    target_sources(aht20 PRIVATE
+if(AHT20_DRIVER_HAL_STM32)
+message("AHT20 using STM32 HAL")
+    target_sources(aht20 PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/stm32/aht20_HAL_stm32.c
     )
 endif()
-
-
-message("AHT20 driver sources: " ${AHT20_SRC_FILES})
-
 
 target_link_directories(aht20 INTERFACE
 )

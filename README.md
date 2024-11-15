@@ -40,9 +40,9 @@ void main() {
 
 All functions return `AHT20_ResponseTypeDef`.  
 Values:  
-    AHT20_OK = 0  
-    AHT20_ERROR = 1  
-    AHT20_BUSY = 2  
+    AHT20_OK = 0
+    AHT20_ERROR = 1
+    AHT20_BUSY = 2
     AHT20_BAD_CRC =3
 
 ### Explanation
